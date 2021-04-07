@@ -1,5 +1,5 @@
 pipeline {
-	agent any
+	agent image-builder
 	stages {
 		stage('Verify Branch') {
 			steps {
