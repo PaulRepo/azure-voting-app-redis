@@ -1,4 +1,30 @@
 pipeline {
+	agent any
+	stages {
+		stage('container scanning') {
+			parallel {
+				stage('Hello World') {
+					steps {
+						echo "Hello World !!"
+						sleep(time:30, unit: "SECONDS")
+					}
+				}
+				stage('GoodBye World') {
+					steps {
+						echo "Goodbye World !!"
+						sleep(time:30, unit: "SECONDS")
+					}
+				}
+			}
+		
+		}
+	}
+}
+
+
+###############
+
+pipeline {
 	agent {
 		label 'image-builder'
 	}
@@ -22,7 +48,7 @@ pipeline {
 		stage('Start test app') {
 			steps {
 				sh '''
-					# docker-compose up
+					docker-compose up
 					./scripts/test_container.sh
 				'''
 			}
@@ -33,6 +59,16 @@ pipeline {
 				failure {
 					echo "App failed to start"
 				}
+			}
+		}
+		stage('Run tests') {
+			steps {
+				sh 'pytest ./tests/test_sample.py'
+			}
+		}
+		stage('Stop test app') {
+			steps {
+				sh 'docker-compose down'
 			}
 		}
 	}
