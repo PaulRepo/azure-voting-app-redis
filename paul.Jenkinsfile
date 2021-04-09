@@ -1,30 +1,4 @@
 pipeline {
-	agent any
-	stages {
-		stage('container scanning') {
-			parallel {
-				stage('Hello World') {
-					steps {
-						echo "Hello World !!"
-						sleep(time:30, unit: "SECONDS")
-					}
-				}
-				stage('GoodBye World') {
-					steps {
-						echo "Goodbye World !!"
-						sleep(time:30, unit: "SECONDS")
-					}
-				}
-			}
-		
-		}
-	}
-}
-
-
-###############
-
-pipeline {
 	agent {
 		label 'image-builder'
 	}
