@@ -25,6 +25,8 @@ pipeline {
 					docker-compose up -d
 					whoami
 					ls -l ./scripts/test_container.sh
+					chmod u+x ./scripts/test_container.sh
+					ls -l ./scripts/test_container.sh
 					./scripts/test_container.sh
 				'''
 			}
