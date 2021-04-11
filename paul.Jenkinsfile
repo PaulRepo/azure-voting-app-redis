@@ -23,6 +23,8 @@ pipeline {
 			steps {
 				sh '''
 					docker-compose up -d
+					whoami
+					ls -l ./scripts/test_container.sh
 					./scripts/test_container.sh
 				'''
 			}
