@@ -7,6 +7,9 @@ pipeline {
   stages {
     stage('Test') {
       steps {
+        echo "whoami: "
+        whoami
+        hostname
         sh "node --version"
       }
     }
