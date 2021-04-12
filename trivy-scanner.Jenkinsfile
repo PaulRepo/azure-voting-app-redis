@@ -4,7 +4,9 @@ pipeline {
 		stage('Container scanning') {
 			steps {
 				sh '''
-					trivy paul0docker/jenkinsdocker:v1
+					# cp /usr/local/bin/trivy /usr/bin/trivy
+					# This pipeline will fail if the image it is scanning has vulnerabilities
+					trivy  paul0docker/jenkinsdocker:v1
 				'''
 			}
 		}
