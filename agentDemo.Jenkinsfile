@@ -8,8 +8,8 @@ pipeline {
     stage('Test') {
       steps {
         echo "whoami: "
-        whoami
-        hostname
+        sh 'whoami'
+        sh 'hostname'
         sh "node --version"
       }
     }
