@@ -14,7 +14,7 @@ pipeline {
 				timeout(time: 1, unit: 'MINUTES')
 			}
 			steps {
-				input message 'Deploy?'
+				input message: 'Deploy?'
 			}
 			post {
 				success {
