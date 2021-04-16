@@ -13,7 +13,7 @@ pipeline {
 		}
 		stage('Echo-Scripted') {
 			steps {
-				scripts {
+				script {
 					if (env.BRACNH_NAME == 'master) {
 						echo 'This is a master branch'
 					}
