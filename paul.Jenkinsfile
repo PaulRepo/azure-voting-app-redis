@@ -51,9 +51,9 @@ pipeline {
 		}
 		stage('Push container') {
 			
-			/*steps {
+			steps {
 				echo "Workspace is $WORKSPACE"
-				dir("$WORKSPACE/azure-vote") {
+				/*dir("$WORKSPACE/azure-vote") {
 					script {
 						def REGISTRY_URL = "https://index.docker.io/v1/"
 						def USER_NAME = "paul0docker"
@@ -62,8 +62,8 @@ pipeline {
 							image.push()
 						}
 					}
-				}
-			}*/
+				}*/
+			}
 		}
 	}
 }
