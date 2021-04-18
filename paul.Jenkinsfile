@@ -1,4 +1,4 @@
-@Library('github.com/devbyaccident/demo-shared-pipeline') _
+@Library('github/PaulRepo/demo_shared_pipeline') _
 
 pipeline {
 	agent any
